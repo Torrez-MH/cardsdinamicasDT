@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Amazing Events</title>
+    <script
+      src="https://kit.fontawesome.com/2201be51b1.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="shortcut icon"
+      href="./assets/html_logo_html5_5_five_piä_ä__icon_16.png"
+      type="image/x-icon"
+    />
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg bg-dark bg-gradient">
+        <div class="container-fluid ms-5">
+          <a class="navbar-brand" href="#">
+            <img
+              src="./assets/Logo Amazing Events.png"
+              alt="Bootstrap"
+              height="40"
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-end me-5 pe-5"
+            id="navbarNav"
+          >
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link text-white" href="./home.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link active text-white"
+                  aria-current="page"
+                  href="#"
+                  >Upcoming Events</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="./pastevents.html"
+                  >Past Events</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="./contact.html"
+                  >Contact Us</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="./stats.html">Stats</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <section class="text-center">
+      <h1 class="display-1">Upcoming Events</h1>
+    </section>
+    <div
+      class="d-flex flex-column flex-md-row justify-content-md-around align-items-md-center"
+    >
+      <div class="d-flex flex-column align-items-center flex-md-row mt-4">
+        <div>
+          <input type="checkbox" name="home" id="category" />
+          <label for="category">Category</label>
+        </div>
+        <div class="ms-md-4">
+          <input type="checkbox" name="home" id="category" />
+          <label for="category">Category</label>
+        </div>
+        <div class="ms-md-4">
+          <input type="checkbox" name="home" id="category" />
+          <label for="category">Category</label>
+        </div>
+        <div class="ms-md-4">
+          <input type="checkbox" name="home" id="category" />
+          <label for="category">Category</label>
+        </div>
+        <div class="ms-md-4">
+          <input type="checkbox" name="home" id="category" />
+          <label for="category">Category</label>
+        </div>
+      </div>
+      <div class="d-flex mt-4 pb-2">
+        <input
+          class="form-control me-2"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+        />
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </div>
+    </div>
+    <main>
+      <div class="row m-5 d-flex justify-content-around">
+        <div class="card flex align-items-center m-5" style="width: 18rem">
+          <img
+            src="./assets/Concierto de musica1.jpg"
+            class="card-img-top imgCustom shadow mb-2 bg-body rounded"
+            alt="conciertos"
+          />
+          <div class="card-body">
+            <h5 class="card-title text-center">Conciertos</h5>
+            <p class="card-text text-center">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+            <div class="d-flex justify-content-around">
+              <p>Price $0000</p>
+              <a href="#" class="btn btn-primary">Ver mas...</a>
+            </div>
+          </div>
+        </div>
+        <div class="card flex align-items-center m-5" style="width: 18rem">
+          <img
+            src="./assets/Salida al museo5.jpg"
+            class="card-img-top imgCustom shadow mb-2 bg-body rounded"
+            alt="museos"
+          />
+          <div class="card-body">
+            <h5 class="card-title text-center">Museos</h5>
+            <p class="card-text text-center">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+            <div class="d-flex justify-content-around">
+              <p>Price $0000</p>
+              <a href="#" class="btn btn-primary">Ver mas...</a>
+            </div>
+          </div>
+        </div>
+        <div class="card flex align-items-center m-5" style="width: 18rem">
+          <img
+            src="./assets/Feria de comidas7.jpg"
+            class="card-img-top imgCustom shadow mb-2 bg-body rounded"
+            alt="comidas"
+          />
+          <div class="card-body">
+            <h5 class="card-title text-center">Ferias de Comida</h5>
+            <p class="card-text text-center">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+            <div class="d-flex justify-content-around">
+              <p>Price $0000</p>
+              <a href="#" class="btn btn-primary">Ver mas...</a>
+            </div>
+          </div>
+        </div>
+        <div class="card flex align-items-center m-5" style="width: 18rem">
+          <img
+            src="./assets/Maraton3.jpg"
+            class="card-img-top imgCustom shadow mb-2 bg-body rounded"
+            alt="maratones"
+          />
+          <div class="card-body">
+            <h5 class="card-title text-center">Maratones</h5>
+            <p class="card-text text-center">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+            <div class="d-flex justify-content-around">
+              <p>Price $0000</p>
+              <a href="#" class="btn btn-primary">Ver mas...</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer
+      class="d-flex justify-content-around align-items-center bg-dark bg-gradient text-white"
+    >
+      <div class="aCustom">
+        <a href="#"><i class="fa-brands fa-whatsapp text-red"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+      </div>
+      <div class="">
+        <p>COHORT 40</p>
+        <p>Diego Torrez</p>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

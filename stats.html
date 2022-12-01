@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Amazing Events</title>
+    <script
+      src="https://kit.fontawesome.com/2201be51b1.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="shortcut icon"
+      href="./assets/html_logo_html5_5_five_piä_ä__icon_16.png"
+      type="image/x-icon"
+    />
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg bg-dark bg-gradient">
+        <div class="container-fluid ms-5">
+          <a class="navbar-brand" href="#">
+            <img
+              src="./assets/Logo Amazing Events.png"
+              alt="Bootstrap"
+              height="40"
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-end me-5 pe-5"
+            id="navbarNav"
+          >
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link text-white" href="./home.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="./upcomingevents.html"
+                  >Upcoming Events</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="./pastevents.html"
+                  >Past Events</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="./contact.html"
+                  >Contact Us</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link active text-white"
+                  aria-current="page"
+                  href="#"
+                  >Stats</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <section class="text-center">
+      <h1 class="display-1">Stats</h1>
+    </section>
+    <div
+      class="d-flex flex-column flex-md-row justify-content-md-around align-items-md-center"
+    >
+      <div class="d-flex flex-column align-items-center flex-md-row mt-4">
+        <div>
+          <input type="checkbox" name="home" id="category" />
+          <label for="category">Category</label>
+        </div>
+        <div class="ms-md-4">
+          <input type="checkbox" name="home" id="category" />
+          <label for="category">Category</label>
+        </div>
+        <div class="ms-md-4">
+          <input type="checkbox" name="home" id="category" />
+          <label for="category">Category</label>
+        </div>
+        <div class="ms-md-4">
+          <input type="checkbox" name="home" id="category" />
+          <label for="category">Category</label>
+        </div>
+        <div class="ms-md-4">
+          <input type="checkbox" name="home" id="category" />
+          <label for="category">Category</label>
+        </div>
+      </div>
+      <div class="d-flex mt-4 pb-2">
+        <input
+          class="form-control me-2"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+        />
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </div>
+    </div>
+    <main class="m-4">
+      <div
+        id="carouselExampleControls"
+        class="carousel slide"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              src="./assets/sky-brown.jpg"
+              class="d-block w-100 carruselCustom"
+              alt="niñaskater"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="./assets/planextremo.jpg"
+              class="d-block w-100 carruselCustom"
+              alt="boungi"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="./assets/moto2.jpg"
+              class="d-block w-100 carruselCustom"
+              alt="motogp"
+            />
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleControls"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleControls"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </main>
+
+    <div class="d-flex justify-content-center m-3 text-start">
+      <table>
+        <thead>
+          <tr>
+            <th colspan="3">Events Statistics</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Events with the highest percentage of attendance</td>
+            <td>Events with the lowest percentage of attendance</td>
+            <td>Events with larger capacity</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+        <thead>
+          <tr>
+            <th colspan="3">Upcoming Events statistics by category</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Categories</td>
+            <td>Revenues</td>
+            <td>Percentage of attendance</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+        <thead>
+          <tr>
+            <th colspan="3">Past Events statistics by category</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Categories</td>
+            <td>Revenues</td>
+            <td>Percentage of attendance</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <footer
+      class="d-flex justify-content-around align-items-center bg-dark bg-gradient text-white"
+    >
+      <div class="aCustom">
+        <a href="#"><i class="fa-brands fa-whatsapp text-red"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+      </div>
+      <div class="">
+        <p>COHORT 40</p>
+        <p>Diego Torrez</p>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

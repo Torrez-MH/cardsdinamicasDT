@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+main{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.formain{
+    display: flex;
+    justify-content: space-evenly;
+}
+.imgCustom{
+    width: 100%;
+    height: 100%;
+    margin-top: 2rem;
+}
+footer{
+    height: 18vh;
+}
+.aCustom{
+    font-size: 50px;
+    display: flex;
+}
+.aCustom a{
+    margin-left: 1rem;
+}
+table, th, tr, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    height: 25px;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+.detailCustom{
+    height: 70vh;
+}
+.carruselCustom{
+    height: 500px !important;
+    object-fit: contain !important;
+}
