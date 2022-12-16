@@ -181,27 +181,40 @@ const data = {
   ],
 };
 
-let card = document.getElementById("card-conteiner");
+let queryString = location.search;
+let params = new URLSearchParams(queryString);
+let id = params.get("id");
 
-data.events.map((contenido) => {
-  card.innerHTML += `
-				<div class="card flex align-items-center m-5" style="width: 18rem">
-          <img src="${contenido.image}" class="card-img-top imgCustom shadow mb-2 bg-body rounded" 
-					alt="${contenido.name}"/>
-          <div class="card-body">
-            <h5 class="card-title text-center">${contenido.name}</h5>
-						<p class="text-center"><strong>Date:</strong> ${contenido.date} </p>
-						<p class="text-center"><strong>Category:</strong> ${contenido.category}</p>
-						<p class="text-center"><strong>Place:</strong> ${contenido.place}</p>
-						<p class="text-center"><strong>Capacity:</strong> ${contenido.capacity}</p>
-            <p class="card-text text-center">${contenido.description}</p>
-            <div class="d-flex justify-content-around text-start">
-              <p><strong>Price $ ${contenido.price}</strong> </p>
-              <a href="#" class="btn btn-primary">Ver mas...</a>
-            </div>
-          </div>
-        </div>
-	`;
-});
+console.log(id);
+/* let idUnaLinea = new URLSearchParams(location.search).get("id")
+ */
+/* console.log(idUnaLinea)
+ */
 
+let cardDetail = data.events;
+let contenido = cardDetail.find((item) => item._id == id);
 
+console.log(contenido);
+
+let conteinerDetailCard = document.getElementById("conteinerDetailCard");
+
+conteinerDetailCard.innreHTML = `
+                <div class="row g-0">
+                <div class="col-md-4">
+                <img
+                    src="${contenido.image}"
+                    class="img-fluid rounded-start"
+                    alt="${contenido.image}"
+                />
+                </div>
+                <div class="col-md-8 mt-5">
+                <div class="card-body align-items-center">
+                    <h5 class="card-title text-center m-5">${contenido.category}</h5>
+                    <p class="card-text text-center">
+                    ${contenido.description}
+                    </p>
+                </div>
+                </div>
+                </div>
+
+`;
