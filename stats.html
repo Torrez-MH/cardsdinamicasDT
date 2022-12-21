@@ -80,43 +80,8 @@
         </div>
       </nav>
     </header>
-    <section class="text-center">
+    <div class="text-center">
       <h1 class="display-1">Stats</h1>
-    </section>
-    <div
-      class="d-flex flex-column flex-md-row justify-content-md-around align-items-md-center"
-    >
-      <div class="d-flex flex-column align-items-center flex-md-row mt-4">
-        <div>
-          <input type="checkbox" name="home" id="category" />
-          <label for="category">Category</label>
-        </div>
-        <div class="ms-md-4">
-          <input type="checkbox" name="home" id="category" />
-          <label for="category">Category</label>
-        </div>
-        <div class="ms-md-4">
-          <input type="checkbox" name="home" id="category" />
-          <label for="category">Category</label>
-        </div>
-        <div class="ms-md-4">
-          <input type="checkbox" name="home" id="category" />
-          <label for="category">Category</label>
-        </div>
-        <div class="ms-md-4">
-          <input type="checkbox" name="home" id="category" />
-          <label for="category">Category</label>
-        </div>
-      </div>
-      <div class="d-flex mt-4 pb-2">
-        <input
-          class="form-control me-2"
-          type="search"
-          placeholder="Search"
-          aria-label="Search"
-        />
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </div>
     </div>
     <main class="m-4">
       <div
@@ -168,88 +133,57 @@
       </div>
     </main>
 
-    <div class="d-flex justify-content-center m-3 text-start">
-      <table>
+    <div class="d-flex justify-content-center m-3 text-start ">
+      <table class="tablaEventos bg-dark bg-gradient text-white ">
         <thead>
           <tr>
-            <th colspan="3">Events Statistics</th>
+            <th colspan="3" class="text-center">Events Statistics</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td>Events with the highest percentage of attendance</td>
-            <td>Events with the lowest percentage of attendance</td>
-            <td>Events with larger capacity</td>
+          <tr class="text-center">
+            <th>Event with the highest percentage of attendance</th>
+            <th>Event with the lowest percentage of attendance</th>
+            <th>Event with larger capacity</th>
           </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
+        <tbody id="contenidoTotal">          
         </tbody>
-        <thead>
+        </table>
+      </div>
+
+
+      <div class="d-flex justify-content-center m-3 text-start">
+        <table class="tablaEventos bg-dark bg-gradient text-white">  
+        <thead class="text-center">
           <tr>
             <th colspan="3">Upcoming Events statistics by category</th>
           </tr>
+          <tr class="text-center">
+            <th>Categories</th>
+            <th>Revenues</th>
+            <th>Percentage of attendance</th>
+          </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td>Categories</td>
-            <td>Revenues</td>
-            <td>Percentage of attendance</td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
+        <tbody id="contenidoUpComing">
+          
         </tbody>
+        </table>
+      </div>
+
+
+      <div class="d-flex justify-content-center m-3 text-start">
+        <table class="tablaEventos bg-dark bg-gradient text-white">
         <thead>
-          <tr>
+          <tr class="text-center">
             <th colspan="3">Past Events statistics by category</th>
           </tr>
+          <tr class="text-center">
+            <th>Categories</th>
+            <th>Revenues</th>
+            <th>Percentage of attendance</th>
+          </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td>Categories</td>
-            <td>Revenues</td>
-            <td>Percentage of attendance</td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
+        <tbody id="contenidoPast">
+          
         </tbody>
       </table>
     </div>
@@ -268,6 +202,7 @@
       </div>
     </footer>
 
+    <script src="./stats.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"

@@ -184,13 +184,13 @@ const data = {
 let card = document.getElementById("card-conteiner");
 let eventos = data.events
 
-cardDinamica(eventos, card)
+
 
 function cardDinamica(datos, contenedor){
 	contenedor.innerHTML = ""
 	datos.forEach((contenido) => {
 		contenedor.innerHTML += `
-		<div class="card flex align-items-center m-5" style="width: 18rem">
+		<div class="card flex align-items-center m-5 heigth-100%" style="width: 18rem">
           <img src="${contenido.image}" class="card-img-top imgCustom shadow mb-2 bg-body rounded" alt="${contenido.name}"/>
           <div class="card-body">
             <h5 class="card-title text-center">${contenido.name}</h5>
@@ -198,8 +198,8 @@ function cardDinamica(datos, contenedor){
 						<p class="text-center"><strong>Category:</strong> ${contenido.category}</p>
 						<p class="text-center"><strong>Place:</strong> ${contenido.place}</p>
 						<p class="text-center"><strong>Capacity:</strong> ${contenido.capacity}</p>
-            <p class="card-text text-center">${contenido.description}</p>
-            <div class="d-flex justify-content-around text-start">
+            <p class="card-text text-center"></p>
+            <div class="d-flex justify-content-around text-start my-5 mx-5">
               <p><strong>Price $ ${contenido.price}</strong> </p>
               <a href="./details.html?id=${contenido._id}" class="btn btn-primary">View More...</a>
             </div>
@@ -211,13 +211,12 @@ function cardDinamica(datos, contenedor){
 
 
 
-
-let checkbox = document.getElementById("Checkbox-conteiner")
+let checkbox = document.getElementById("checkbox-conteiner")
 let categorias = data.events.map((contenido) => contenido.category)
 let categoriasUnicas = new Set (categorias)
 let categoriasFinal = Array.from (categoriasUnicas)
 
-checkboxDinamico(categoriasFinal, checkbox)
+
 
 function checkboxDinamico (datos, contenedor){
 	contenedor.innerHTML = ""
@@ -232,126 +231,56 @@ function checkboxDinamico (datos, contenedor){
   	</div>
 		`
 	})
-	contenedor.innerHTML = checkLittle
+	contenedor.innerHTML += checkLittle
 }
 
 
 checkbox.addEventListener ('change', (ev) => {
-	filtro(eventos)
+
+	let filtros = filtroCruzado()
+  cardDinamica (filtros, card)
 })
 
 function filtro (evento){
-	let filtrado = Array.from(document.querySelectorAll("input[type='checkbox']:checked")).map ((e) => e.value)
-
+  let filtrado = Array.from(document.querySelectorAll("input[type='checkbox']:checked")).map ((e) => e.value)
+  
 	let arrayConFiltro = filtrado.map(valor => evento.filter (object => {
-		return object.category === valor
+    return object.category === valor 
 	})).flat()
-	if (!filtrado.length){
-		cardDinamica(eventos, card)
-	}
-	else {
-		cardDinamica(arrayConFiltro, card)
+	if (!filtrado.length ){
+    return evento
 	}
 	return arrayConFiltro
 }
 
 
+let buscadorTexto = document.getElementById("buscadorText")
+let eventosPorBuscador = data.events
+filtro(categoriasFinal, buscadorTexto)
 
+buscadorTexto.addEventListener ('input', (e) => {
+  let filtros = filtroCruzado()
+  cardDinamica (filtros, card) 
+})
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* data.events.map((contenido) => {
-  card.innerHTML += `
-				<div class="card flex align-items-center m-5" style="width: 18rem">
-          <img src="${contenido.image}" class="card-img-top imgCustom shadow mb-2 bg-body rounded" 
-					alt="${contenido.name}"/>
-          <div class="card-body">
-            <h5 class="card-title text-center">${contenido.name}</h5>
-						<p class="text-center"><strong>Date:</strong> ${contenido.date} </p>
-						<p class="text-center"><strong>Category:</strong> ${contenido.category}</p>
-						<p class="text-center"><strong>Place:</strong> ${contenido.place}</p>
-						<p class="text-center"><strong>Capacity:</strong> ${contenido.capacity}</p>
-            <p class="card-text text-center">${contenido.description}</p>
-            <div class="d-flex justify-content-around text-start">
-              <p><strong>Price $ ${contenido.price}</strong> </p>
-              <a href="./details.js" class="btn btn-primary">Ver mas...</a>
-            </div>
-          </div>
-        </div>
-	`;
-});
-
-
-function renderCards (lista, contenedor){
-	renderCards(events, card)
-	contenedor.innerHTML = ""
-	listados = ""
-	lista.forEach((contenido) => {
-		listados += `
-		<div class="card flex align-items-center m-5" style="width: 18rem">
-          <img src="${contenido.image}" class="card-img-top imgCustom shadow mb-2 bg-body rounded" 
-					alt="${contenido.name}"/>
-          <div class="card-body">
-            <h5 class="card-title text-center">${contenido.name}</h5>
-						<p class="text-center"><strong>Date:</strong> ${contenido.date} </p>
-						<p class="text-center"><strong>Category:</strong> ${contenido.category}</p>
-						<p class="text-center"><strong>Place:</strong> ${contenido.place}</p>
-						<p class="text-center"><strong>Capacity:</strong> ${contenido.capacity}</p>
-            <p class="card-text text-center">${contenido.description}</p>
-            <div class="d-flex justify-content-around text-start">
-              <p><strong>Price $ ${contenido.price}</strong> </p>
-              <a href="#" class="btn btn-primary">Ver mas...</a>
-            </div>
-          </div>
-        </div>
-		`
-	})
-	contenedor.innerHTML = listados
+function filtroPorBuscador (eventos, search){  
+  return eventos.filter(evento => evento.name.toLowerCase().includes(search.toLowerCase()))
 }
 
 
-let conteinerCategory = document.getElementById("padreCheckbox");
+function filtroCruzado(){
+  let filtroCheck = filtro(eventos)
+  let filtroTexto = filtroPorBuscador(filtroCheck, buscadorTexto.value)
+  return filtroTexto
+}
 
-let categorias = Array.from(new Set(data.events.map((e) => e.category)));
+let datos;
 
-
-categorias.forEach((element) => {
-  conteinerCategory.innerHTML += `
-  <div class="form-check form-check-inline">
-  <label class="form-check-label" for="${element}"> 
-  <input class="form-check-input" name="category" type="checkbox" value="${element}" id="${element}">
- 		${element}
-  </label>
-  </div>
-  `;
-});
-
-conteinerCategory.addEventListener('change', (e) => {
- 	let categoriaFiltrada = filtrarCategorias(data)
-
-
+fetch ("https://amazing-events.onrender.com/api/events")
+.then(respuesta => respuesta.json())
+.then( data => {
+  data=datos
+  cardDinamica(eventos, card)
+  checkboxDinamico(categoriasFinal, checkbox)
 })
-
-function filtrarCategorias (events){
-
-	let checkChecked = Array.from (document.querySelectorAll('input[type="checkbox"]:checked')).map ( e => e.value )
-	let arrayFiltradoPorCheckbox =  checkChecked.map (valorCheck => events.filter (objetoDeLaTarjeta => {
-		return objetoDeLaTarjeta.category == valorCheck
-	}))
-	console.log(arrayFiltradoPorCheckbox)
-} */
+.catch( error => console.log(error))

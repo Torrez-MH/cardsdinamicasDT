@@ -184,7 +184,7 @@ const data = {
 let queryString = location.search;
 let params = new URLSearchParams(queryString);
 let id = params.get("id");
-
+console.log([document])
 console.log(id);
 /* let idUnaLinea = new URLSearchParams(location.search).get("id")
  */
@@ -198,7 +198,7 @@ console.log(contenido);
 
 let conteinerDetailCard = document.getElementById("conteinerDetailCard");
 
-conteinerDetailCard.innreHTML = `
+conteinerDetailCard.innerHTML = `
                 <div class="row g-0">
                 <div class="col-md-4">
                 <img
@@ -207,14 +207,14 @@ conteinerDetailCard.innreHTML = `
                     alt="${contenido.image}"
                 />
                 </div>
-                <div class="col-md-8 mt-5">
-                <div class="card-body align-items-center">
+                  <div class="col-md-8 mt-5">
+                    <div class="card-body align-items-center">
                     <h5 class="card-title text-center m-5">${contenido.category}</h5>
                     <p class="card-text text-center">
                     ${contenido.description}
                     </p>
-                </div>
-                </div>
+                    </div>
+                  </div>
                 </div>
 
-`;
+                `;

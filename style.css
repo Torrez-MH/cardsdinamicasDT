@@ -42,3 +42,6 @@ table, th, tr, td{
     height: 500px !important;
     object-fit: contain !important;
 }
+.tablaEventos{
+    width: 60rem;
+}
