@@ -181,109 +181,40 @@ const data = {
   ],
 };
 
+let queryString = location.search;
+let params = new URLSearchParams(queryString);
+let id = params.get("id");
+console.log([document])
+console.log(id);
+/* let idUnaLinea = new URLSearchParams(location.search).get("id")
+ */
+/* console.log(idUnaLinea)
+ */
 
+let cardDetail = data.events;
+let contenido = cardDetail.find((item) => item._id == id);
 
+console.log(contenido);
 
-let card = document.getElementById("upComingEvents-conteiner");
-let eventos = data.events
-let fechaEventos = data.currentDate
-let upcomingCard = eventos.filter(fecha => fecha.date > fechaEventos)
+let conteinerDetailCard = document.getElementById("conteinerDetailCard");
 
+conteinerDetailCard.innerHTML = `
+                <div class="row g-0">
+                <div class="col-md-4">
+                <img
+                    src="${contenido.image}"
+                    class="img-fluid rounded-start"
+                    alt="${contenido.image}"
+                />
+                </div>
+                  <div class="col-md-8 mt-5">
+                    <div class="card-body align-items-center">
+                    <h5 class="card-title text-center m-5">${contenido.category}</h5>
+                    <p class="card-text text-center">
+                    ${contenido.description}
+                    </p>
+                    </div>
+                  </div>
+                </div>
 
-
-function cardDinamica(datos, contenedor){
-	contenedor.innerHTML = ""
-	datos.forEach((contenido) => {
-		contenedor.innerHTML += `
-		<div class="card flex align-items-center m-5 heigth-100%" style="width: 18rem">
-          <img src="${contenido.image}" class="card-img-top imgCustom shadow mb-2 bg-body rounded" alt="${contenido.name}"/>
-          <div class="card-body">
-            <h5 class="card-title text-center">${contenido.name}</h5>
-						<p class="text-center"><strong>Date:</strong> ${contenido.date} </p>
-						<p class="text-center"><strong>Category:</strong> ${contenido.category}</p>
-						<p class="text-center"><strong>Place:</strong> ${contenido.place}</p>
-						<p class="text-center"><strong>Capacity:</strong> ${contenido.capacity}</p>
-            <p class="card-text text-center"></p>
-            <div class="d-flex justify-content-around text-start my-5 mx-5">
-              <p><strong>Price $ ${contenido.price}</strong> </p>
-              <a href="./details.html?id=${contenido._id}" class="btn btn-primary">View More...</a>
-            </div>
-          </div>
-        </div>
-		`
-	})
-}
-
-let checkbox = document.getElementById("checkbox-conteiner")
-let categorias = data.events.map((contenido) => contenido.category)
-let categoriasUnicas = new Set (categorias)
-let categoriasFinal = Array.from (categoriasUnicas)
-
-checkboxDinamico(categoriasFinal, checkbox)
-
-function checkboxDinamico (datos, contenedor){
-	contenedor.innerHTML = ""
-	let checkLittle = ""
-	datos.forEach((contenido) => {
-		checkLittle += `
-		<div class="form-check form-check-inline">
- 	 	<label class="form-check-label" for="${contenido}"> 
-  	<input class="form-check-input" name="category" type="checkbox" value="${contenido}" id="${contenido}">
- 		${contenido}
-  	</label>
-  	</div>
-		`
-	})
-	contenedor.innerHTML += checkLittle
-}
-
-
-checkbox.addEventListener ('change', (ev) => {
-
-	let filtros = filtroCruzado()
-  cardDinamica (filtros, card)
-})
-
-function filtro (evento){
-  let filtrado = Array.from(document.querySelectorAll("input[type='checkbox']:checked")).map ((e) => e.value)
-  
-	let arrayConFiltro = filtrado.map(valor => evento.filter (object => {
-    return object.category === valor 
-	})).flat()
-	if (!filtrado.length ){
-    return evento
-	}
-	return arrayConFiltro
-}
-
-
-let buscadorTexto = document.getElementById("buscadorText")
-let eventosPorBuscador = data.events
-filtro(categoriasFinal, buscadorTexto)
-
-buscadorTexto.addEventListener ('input', (e) => {
-  let filtros = filtroCruzado()
-  cardDinamica (filtros, card) 
-})
-
-function filtroPorBuscador (eventos, search){  
-  return eventos.filter(evento => evento.name.toLowerCase().includes(search.toLowerCase()))
-}
-
-
-function filtroCruzado(){
-  let filtroCheck = filtro(upcomingCard)
-  let filtroTexto = filtroPorBuscador(filtroCheck, buscadorTexto.value)
-  return filtroTexto
-}
-
-let datos;
-
-fetch ("https://amazing-events.onrender.com/api/events")
-.then(respuesta => respuesta.json())
-.then( data => {
-  data=datos
-  cardDinamica(upcomingCard, card)
-  checkboxDinamico(categoriasFinal, checkbox)
-})
-.catch( error => console.log(error))
+                `;
